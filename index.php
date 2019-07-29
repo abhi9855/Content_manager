@@ -1,10 +1,10 @@
 <?php
-	session_start();
+session_start();
 
-	if (isset($_SESSION['userid'])) {
-		include_once 'functions.php';
-		include_once 'header.php';
-?>
+if (isset($_SESSION['userid'])) {
+    include_once 'functions.php';
+    include_once 'header.php';
+    ?>
 	</head>
 	<body onload=display_ct();>
 		<form method = "GET" action="" style="padding: 20px 20px 20px 20px;">
@@ -12,12 +12,12 @@
 		</form>
 
 <?php
-	} else {
-		header("Location: login.php");
-	}
+} else {
+    header("Location: login.php");
+}
 ?>
 
 <?php
-	include_once 'footer.php';
+include_once 'footer.php';
 ?>
 

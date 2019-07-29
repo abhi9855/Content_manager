@@ -8,15 +8,17 @@
 			window.location.href="new_record.php?page_no=<?php echo $_GET['page_no']; ?>&query=<?php echo $_GET['query'] ?>";
         }
 
-		function display_c(){
-		var refresh=1000; // Refresh rate in milli seconds
-		mytime=setTimeout('display_ct()',refresh)
-		}
+		function forget(){
+			window.location.href="forget.php";
+        }
 
 		function display_ct() {
-		var x = new Date()
-		document.getElementById('ct').innerHTML = x;
-		display_c();
+			var d = new Date();
+			var refresh=1000; // Refresh rate in milli seconds
+			var months=["JAN","FEB","MAR","APR","MAY","JUN","JUL",
+		    "AUG","SEP","OCT","NOV","DEC"];
+			document.getElementById('ct').innerHTML = d.getDate()+"  "+months[d.getMonth()]+", "+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds() ;
+			mytime=setTimeout('display_ct()',refresh)
 		}
 </script>
 </body>

@@ -3,12 +3,12 @@ session_start();
 if (isset($_SESSION['userid'])) {
     $usrid = $_SESSION['userid'];
     // include_once 'header.php';
-    
+
     include_once 'functions.php';
     $id1 = $_GET['id'];
-    $page_ID=$_GET['page_no'];
-    $search=$_GET['query'];
-    echo"<script> console.log($search); </script>";
+    $page_ID = $_GET['page_no'];
+    $search = $_GET['query'];
+    echo "<script> console.log($search); </script>";
     if (isset($id1)) {
         # code...
         $result = $crud->update_data($id1, "cms", $conn);
@@ -32,15 +32,15 @@ if (isset($_SESSION['userid'])) {
         $url5 = $_GET['url5'];
 
         $sql = $crud->update($id, 'cms', "URL1 = '$url1',URL2 = '$url2',URL3 = '$url3',URL4 = '$url4',URL5 = '$url5',Last_Updated_By = '$usrid'", $conn);
-        
+
         if ($sql) {
             echo "<script>alert('Data Updated');</script>";
             // header("Location: index.php?page_no=".$_GET['page_no']."");
-            echo "<script>window.location.href = 'index.php?page_no=".$page_ID."&query=".$search."'</script>";
+            echo "<script>window.location.href = 'index.php?page_no=" . $page_ID . "&query=" . $search . "'</script>";
             // echo "<script>window.location.href='index.php';</script>";
         } else {
             echo "<script>alert('Data Not Updated');</script>";
-            echo "<script>window.location.href = 'up.php?page_no=".$page_ID."&id=".$id1."'</script>";
+            echo "<script>window.location.href = 'up.php?page_no=" . $page_ID . "&id=" . $id1 . "'</script>";
         }
     }
     ?>
@@ -56,4 +56,3 @@ if (isset($_SESSION['userid'])) {
 <?php
 include_once 'footer.php';
 ?>
- 

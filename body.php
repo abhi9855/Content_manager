@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['userid'])) {
-	?>
+    ?>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -11,7 +11,7 @@ if (isset($_SESSION['userid'])) {
 <title>New Record</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="body">
 <div class="signup-form">
