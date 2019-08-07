@@ -109,12 +109,12 @@ while ($fetch = mysqli_fetch_array($res_data)) {
 
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                <?php echo $fetch['liqroo_url']; ?>
                             </td>
                             
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                <?php echo $fetch['liqroo_price']; ?>
                             </td>
 
                             <td>
@@ -124,7 +124,7 @@ while ($fetch = mysqli_fetch_array($res_data)) {
                                    
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                <?php echo $fetch['URL1_price']; ?>
                             </td>
 
                             <td>
@@ -134,7 +134,7 @@ while ($fetch = mysqli_fetch_array($res_data)) {
        
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                <?php echo $fetch['URL2_price']; ?>
                             </td>
 
                             <td>
@@ -144,7 +144,7 @@ while ($fetch = mysqli_fetch_array($res_data)) {
        
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                <?php echo $fetch['URL_price']; ?>
                             </td>
 
                             <td >
@@ -154,7 +154,7 @@ while ($fetch = mysqli_fetch_array($res_data)) {
        
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                <?php echo $fetch['URL4_price']; ?>
                             </td>
 
                             <td>
@@ -164,7 +164,7 @@ while ($fetch = mysqli_fetch_array($res_data)) {
        
                             <td>
                                 
-                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                                 <?php echo $fetch['URL5_price']; ?> 
                             </td>
 
                             <td>

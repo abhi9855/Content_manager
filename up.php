@@ -36,18 +36,78 @@ if (isset($_SESSION['userid'])) {
         // echo "<script>alert($id);</script>";
         $liqroo_url = $_GET['liqroo_url'];
         $liqroo_price = $_GET['liqroo_price'];
+        
+        if(isset($_GET['liqroo_price']) && !empty($_GET['liqroo_price'])){
+            $liqroo_price = $_GET['liqroo_price'];
+            //echo "if";die;
+
+        }else{
+            //echo "elese";die;
+            $liqroo_price = 'NULL';
+        }
+
         $url1 = $_GET['Whisky_Exchnage_Url'];
         $url1_price = $_GET['Whisky_Exchnage_Price'];
+
+        if(isset($_GET['Whisky_Exchnage_Price']) && !empty($_GET['Whisky_Exchnage_Price'])){
+            $url1_price = $_GET['Whisky_Exchnage_Price'];
+            //echo "if";die;
+
+        }else{
+            //echo "elese";die;
+            $url1_price = 'NULL';
+        }
+
         $url2 = $_GET['Master_Of_Malt_Url'];
         $url2_price = $_GET['Master_Of_Malt_Price'];
+
+        if(isset($_GET['Master_Of_Malt_Price']) && !empty($_GET['Master_Of_Malt_Price'])){
+            $url2_price = $_GET['Master_Of_Malt_Price'];
+            //echo "if";die;
+
+        }else{
+            //echo "elese";die;
+            $url2_price = 'NULL';
+        }
+
         $url3 = $_GET['DrinkSupermarket_Url'];
         $url3_price = $_GET['DrinkSupermarket_Price'];
+        
+        if(isset($_GET['DrinkSupermarket_Price']) && !empty($_GET['DrinkSupermarket_Price'])){
+            $url3_price = $_GET['DrinkSupermarket_Price'];
+            //echo "if";die;
+
+        }else{
+            //echo "elese";die;
+            $url3_price = 'NULL';
+        }
+
         $url4 = $_GET['Other_Site_Url'];
         $url4_price = $_GET['Other_Site_Price'];
+
+        if(isset($_GET['Other_Site_Price']) && !empty($_GET['Other_Site_Price'])){
+            $url4_price = $_GET['Other_Site_Price'];
+            //echo "if";die;
+
+        }else{
+            //echo "elese";die;
+            $url4_price = 'NULL';
+        }
+
         $url5 = $_GET['url5'];
         $url5_price = $_GET['URL5_Price'];
 
-        $sql = $crud->update($id, 'cms', "liqroo_url = '$liqroo_url',liqroo_price = '$liqroo_price', URL1 = '$url1', URL1_price = '$url1_price', URL2 = '$url2', URL2_price = '$url2_price', URL3 = '$url3', URL3_price = '$url3_price', URL4 = '$url4', URL4_price = '$url4_price', URL5 = '$url5', URL5_price = '$url5_price', Last_Updated_By = '$usrid'", $conn);
+        if(isset($_GET['URL5_Price']) && !empty($_GET['URL5_Price'])){
+            $url5_price = $_GET['URL5_Price'];
+            //echo "if";die;
+
+        }else{
+            //echo "elese";die;
+            $url5_price = 'NULL';
+        }
+        
+
+        $sql = $crud->update($id, 'cms', "liqroo_url = '$liqroo_url',liqroo_price = $liqroo_price, URL1 = '$url1', URL1_price = $url1_price, URL2 = '$url2', URL2_price = $url2_price, URL3 = '$url3', URL3_price = $url3_price, URL4 = '$url4', URL4_price = $url4_price, URL5 = '$url5', URL5_price = $url5_price, Last_Updated_By = '$usrid'", $conn);
         // print_r($sql);
         // die();
 
