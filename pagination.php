@@ -23,11 +23,18 @@ include_once 'header.php';
     <thead>
       <tr>
         <th scope="col">LIQROO_ID</th>
+        <th scope="col">LIQROO URL</th>
+        <th scope="col">LIQROO PRICE</th>
         <th scope="col">URL1</th>
+        <th scope="col">Price</th>
         <th scope="col">URL2</th>
+        <th scope="col">Price</th>
         <th scope="col">URL3</th>
+        <th scope="col">Price</th>
         <th scope="col">URL4</th>
+        <th scope="col">Price</th>
         <th scope="col">URL5</th>
+        <th scope="col">Price</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -101,33 +108,70 @@ while ($fetch = mysqli_fetch_array($res_data)) {
                             </td>
 
                             <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                            </td>
+                            
+                            <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                            </td>
+
+                            <td>
                                 <a href="<?php echo $fetch['URL1']; ?>" target="_blank"><?php echo $fetch['URL1']; ?></a>
 
+                            </td>
+                                   
+                            <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
                             </td>
 
                             <td>
                                 <a href="<?php echo $fetch['URL2']; ?>" target="_blank"><?php echo $fetch['URL2']; ?></a>
 
                             </td>
+       
+                            <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                            </td>
 
                             <td>
                                 <a href="<?php echo $fetch['URL3']; ?>" target="_blank"><?php echo $fetch['URL3']; ?></a>
 
+                            </td>
+       
+                            <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
                             </td>
 
                             <td >
                                 <a href="<?php echo $fetch['URL4']; ?>" target="_blank"><?php echo $fetch['URL4']; ?></a>
 
                             </td>
+       
+                            <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                            </td>
 
                             <td>
                                 <a href="<?php echo $fetch['URL5']; ?>" target="_blank"><?php echo $fetch['URL5']; ?></a>
 
                             </td>
+       
+                            <td>
+                                
+                                <!-- <?php echo $fetch['LIQROO_ID']; ?> -->
+                            </td>
 
                             <td>
                                 <!-- <button type = "submit" name = "update" value="<?=$fetch['id'];?>">Update</button>  -->
-                                <a href="up.php?id=<?php echo $fetch['LIQROO_ID'] . '&page_no=' . $_GET['page_no'] . '&query=' . $_GET['query']; ?>"  class="btn btn-outline-success my-2 my-sm-0" style="width:80px;"><span class="glyphicon glyphicon-log-out"></span>edit</a>
+                                <a href="up.php?id=<?php echo $fetch['LIQROO_ID'] . '&page_no=' . $_GET['page_no'] . '&query=' . $_GET['query']; ?>"  class="btn btn-outline-success my-2 my-sm-0" style="width:80px;"><span class="glyphicon glyphicon-log-out"></span>edit</a>   
+                                <!-- <a href="up.php?id=<?php echo $fetch['LIQROO_ID'] . '&page_no=' . $_GET['page_no'] . '&query=' . $_GET['query']; ?>"  class="btn btn-outline-success my-2 my-sm-0" style="width:80px;"><span class="glyphicon glyphicon-log-out"></span>delete  </a> -->
+
                             </td>
                         </tr>
                      <!-- here the data end -->
