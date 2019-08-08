@@ -15,27 +15,65 @@ if (isset($_SESSION['userid'])) {
 </head>
 <body class="body">
 <div class="signup-form">
-	<form method = "POST">
+	<form method = "POST" autocomplete="off">
 		<h2>New Record</h2>
 		<div class="form-group">
 			<input type  =  "hidden" class="form-control" name  =  "page_no" placeholder = "Liqroo_ID" value="<?=$page_ID?>" readonly>
 			<input type = "text" class="form-control" name = "id"  placeholder="Liqroo_ID" required="" autocomplete="off" >
 		</div>
+
 		<div class="form-group">
-			<input type = "url" class="form-control" name = "Whisky_Exchnage_Url"  placeholder="Whisky Exchnage Url">
+			<input type  =  "text" id="text" class="form-control" name  =  "liqroo_price" placeholder = "Liqroo_Price" value="">
 		</div>
+
 		<div class="form-group">
-			<input type = "url" class="form-control" name = "Master_Of_Malt_Url"  placeholder="Master Of Malt Url">
+				<input type  =  "url" id="text" class="form-control" name  =  "liqroo_url" placeholder = "Liqroo_URL" value="">
 		</div>
+
 		<div class="form-group">
-			<input type = "url" class="form-control" name = "DrinkSupermarket_Url"  placeholder="DrinkSupermarket Url">
+			<input type  =  "text" id="text" class="form-control" name  =  "Whisky_Exchnage_Price" placeholder = "Whisky_Exchnage_Price" value="">
 		</div>
+
 		<div class="form-group">
-			<input type = "url" class="form-control" name = "Other_Site_Url"  placeholder="Other Site Url">
+			<input type = "url" id="text" class="form-control" name = "Whisky_Exchnage_Url"  placeholder="Whisky Exchnage Url">
 		</div>
+
 		<div class="form-group">
-			<input type = "url" class="form-control" name = "url5"  placeholder="URL5">
+			<input type  =  "text" id="text" class="form-control" name  =  "Master_Of_Malt_Price" placeholder = "Master_Of_Malt_Price" value="">
 		</div>
+
+		<div class="form-group">
+			<input type = "url" id="text" class="form-control" name = "Master_Of_Malt_Url"  placeholder="Master Of Malt Url">
+		</div>
+
+		<div class="form-group">
+			<input type  =  "text" id="text" class="form-control" name  =  "DrinkSupermarket_Price" placeholder = "DrinkSupermarket_Price" value="">
+		</div>
+
+		<div class="form-group">
+			<input type = "url" id="text" class="form-control" name = "DrinkSupermarket_Url"  placeholder="DrinkSupermarket Url">
+		</div>
+
+		<div class="form-group">
+			<input type  =  "text" id="text" class="form-control" name  =  "Other_Site_Price" placeholder = "Other_Site_Price" value="">
+		</div>
+
+		<div class="form-group">
+			<input type = "url" id="text" class="form-control" name = "Other_Site_Url"  placeholder="Other Site Url">
+		</div>
+		
+		<div class="form-group">
+			<input type  =  "text" id="text" class="form-control" name  =  "URL5_Price" placeholder = "URL5_Price" value="">
+		</div>
+
+		<div class="form-group">
+			<input type = "url" id="text" class="form-control" name = "url5"  placeholder="URL5">
+		</div>
+
+		<div class="form-group">
+				Highlight: <input type="checkbox" id="myCheck" name="myCheck" value="1"  >
+		</div>
+
 		<div class="form-group">
 			<button type = "submit" class="btn btn-success btn-lg btn-block" id="submit" name = "add" value = "Insert" onclick="return confirm('Are you sure?')">Save</button>
 		</div>

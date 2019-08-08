@@ -20,6 +20,25 @@
 			document.getElementById('ct').innerHTML = d.getDate()+"  "+months[d.getMonth()]+", "+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds() ;
 			mytime=setTimeout('display_ct()',refresh)
 		}
+
+		//highlight the field
+		
+		function myFunction() {
+		  var checkBox = document.getElementById("myCheck");
+		  var text = document.getElementById("text");
+		  if (checkBox.checked == true){
+		    text.style.backgroundColor = "yellow";
+		  } else {
+		     text.style.backgroundColor = "lightblue";
+		  }
+		}
+
+		$(document).ready(function(){
+	  		$("#myCheck").click(function(){
+	    		$("#text").css("background-color", "yellow");
+	  		});
+		});
+
 </script>
 </body>
 </html>

@@ -179,3 +179,17 @@ ul {
 	.signup-form form a:hover{
 		text-decoration: underline;
 	}  
+
+    .highlight{
+    background-color: #71D697;
+  }
+
+
+  .table-bordered td, .table-bordered th {
+    border: 1px solid black;
+}
+
+.table thead th {
+    vertical-align: bottom;
+     border-bottom: 1px solid; 
+}

@@ -19,10 +19,10 @@ include_once 'header.php';
 
 <div class="row my-table">
  <div class=" table-responsive1">
-  <table class="table table-hover " id="table">
+  <table class="table table-bordered" id="table">
     <thead>
       <tr>
-        <th scope="col">LIQROO_ID</th>
+        <th scope="col" style="column-width: 500px;">LIQROO_ID</th>
         <th scope="col">LIQROO URL</th>
         <th scope="col">LIQROO PRICE</th>
         <th scope="col">URL1</th>
@@ -62,17 +62,20 @@ if ($search != "") {
     $result_count = mysqli_query($conn, "SELECT count(*) As total_records FROM cms WHERE (`LIQROO_ID` LIKE '%" . $search . "%') OR (`URL1` LIKE '%" . $search . "%') OR (`URL2` LIKE '%" . $search . "%') OR (`URL3` LIKE '%" . $search . "%') OR (`URL4` LIKE '%" . $search . "%') OR (`URL5` LIKE '%" . $search . "%')");
 
     // $result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM `cms`");
+    
     $total_records = mysqli_fetch_array($result_count);
+    
     // print_r("SELECT count(*) FROM cms WHERE (`LIQROO_ID` LIKE '%" . $search . "%') OR (`URL1` LIKE '%" . $search . "%') OR (`URL2` LIKE '%" . $search . "%') OR (`URL3` LIKE '%" . $search . "%') OR (`URL4` LIKE '%" . $search . "%') OR (`URL5` LIKE '%" . $search . "%')");
     // die();
     // print_r($total_records);
     // die();
+
     $total_records = $total_records['total_records'];
 
     $total_no_of_pages = ceil($total_records / $total_records_per_page);
     $second_last = $total_no_of_pages - 1; // total page minus 1
 
-    $sql = "SELECT * FROM cms WHERE (`LIQROO_ID` LIKE '%" . $search . "%') OR (`URL1` LIKE '%" . $search . "%') OR (`URL2` LIKE '%" . $search . "%') OR (`URL3` LIKE '%" . $search . "%') OR (`URL4` LIKE '%" . $search . "%') OR (`URL5` LIKE '%" . $search . "%')  LIMIT $offset, $total_records_per_page";
+    $sql = "SELECT * FROM cms WHERE (`LIQROO_ID` LIKE '%" . $search . "%') OR  (`URL1` LIKE '%" . $search . "%') OR (`URL2` LIKE '%" . $search . "%') OR (`URL3` LIKE '%" . $search . "%') OR (`URL4` LIKE '%" . $search . "%') OR (`URL5` LIKE '%" . $search . "%')  LIMIT $offset, $total_records_per_page";
 
     // print_r("SELECT * FROM cms WHERE (`LIQROO_ID` LIKE '%" . $search . "%') OR (`URL1` LIKE '%" . $search . "%') OR (`URL2` LIKE '%" . $search . "%') OR (`URL3` LIKE '%" . $search . "%') OR (`URL4` LIKE '%" . $search . "%') OR (`URL5` LIKE '%" . $search . "%')  LIMIT
     // $offset, $no_of_records_per_page");
@@ -99,70 +102,77 @@ if ($search != "") {
 }
 
 while ($fetch = mysqli_fetch_array($res_data)) {
+
+
+      if($fetch['highlight']){
+        $class='highlight';
+      }else{
+        $class='';
+      }
     ?>
                     <!-- here goes the data -->
-                        <tr>
-                            <td>
+                        <tr class='<?php echo $class; ?>'>
+                            <td >
 
                                 <?php echo $fetch['LIQROO_ID']; ?>
                             </td>
 
-                            <td>
+                            <td id="text">
                                 
                                 <?php echo $fetch['liqroo_url']; ?>
                             </td>
                             
-                            <td>
+                            <td id="text">
                                 
                                 <?php echo $fetch['liqroo_price']; ?>
                             </td>
 
-                            <td>
+                            <td id="text"> 
                                 <a href="<?php echo $fetch['URL1']; ?>" target="_blank"><?php echo $fetch['URL1']; ?></a>
 
                             </td>
                                    
-                            <td>
+                            <td id="text"id="text">
                                 
                                 <?php echo $fetch['URL1_price']; ?>
                             </td>
 
-                            <td>
+                            <td id="text">
                                 <a href="<?php echo $fetch['URL2']; ?>" target="_blank"><?php echo $fetch['URL2']; ?></a>
 
                             </td>
        
-                            <td>
+                            <td id="text">
                                 
                                 <?php echo $fetch['URL2_price']; ?>
                             </td>
 
-                            <td>
+                            <td id="text">
                                 <a href="<?php echo $fetch['URL3']; ?>" target="_blank"><?php echo $fetch['URL3']; ?></a>
 
                             </td>
        
-                            <td>
+                            <td id="text"> 
                                 
                                 <?php echo $fetch['URL_price']; ?>
                             </td>
 
-                            <td >
+                            <td id="text">
                                 <a href="<?php echo $fetch['URL4']; ?>" target="_blank"><?php echo $fetch['URL4']; ?></a>
 
                             </td>
        
-                            <td>
+                            <td id="text">
                                 
                                 <?php echo $fetch['URL4_price']; ?>
                             </td>
 
-                            <td>
+                            <td id="text">
                                 <a href="<?php echo $fetch['URL5']; ?>" target="_blank"><?php echo $fetch['URL5']; ?></a>
 
                             </td>
        
-                            <td>
+                            <td id="text">
                                 
                                  <?php echo $fetch['URL5_price']; ?> 
                             </td>
@@ -174,6 +184,7 @@ while ($fetch = mysqli_fetch_array($res_data)) {
 
                             </td>
                         </tr>
+                       
                      <!-- here the data end -->
             <?php
 }
