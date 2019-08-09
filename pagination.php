@@ -177,9 +177,10 @@ while ($fetch = mysqli_fetch_array($res_data)) {
                                  <?php echo $fetch['URL5_price']; ?> 
                             </td>
 
-                            <td>
+                            <td align="center">
                                 <!-- <button type = "submit" name = "update" value="<?=$fetch['id'];?>">Update</button>  -->
-                                <a href="up.php?id=<?php echo $fetch['LIQROO_ID'] . '&page_no=' . $_GET['page_no'] . '&query=' . $_GET['query']; ?>"  class="btn btn-outline-success my-2 my-sm-0" style="width:80px;"><span class="glyphicon glyphicon-log-out"></span>edit</a>   
+                                <a href="up.php?id=<?php echo $fetch['LIQROO_ID'] . '&page_no=' . $_GET['page_no'] . '&query=' . $_GET['query']; ?>"  class="btn btn-outline-success my-2 my-sm-0" style="width:60px;;"><span class="glyphicon glyphicon-log-out"></span>edit</a>   
+                               
                                 <!-- <a href="up.php?id=<?php echo $fetch['LIQROO_ID'] . '&page_no=' . $_GET['page_no'] . '&query=' . $_GET['query']; ?>"  class="btn btn-outline-success my-2 my-sm-0" style="width:80px;"><span class="glyphicon glyphicon-log-out"></span>delete  </a> -->
 
                             </td>

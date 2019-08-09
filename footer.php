@@ -23,20 +23,15 @@
 
 		//highlight the field
 		
-		function myFunction() {
-		  var checkBox = document.getElementById("myCheck");
-		  var text = document.getElementById("text");
-		  if (checkBox.checked == true){
-		    text.style.backgroundColor = "yellow";
-		  } else {
-		     text.style.backgroundColor = "lightblue";
-		  }
-		}
-
 		$(document).ready(function(){
-	  		$("#myCheck").click(function(){
-	    		$("#text").css("background-color", "yellow");
-	  		});
+			$("#myCheck").click(function(){
+				if($(this).prop("checked") == true){
+					$("input").css("background-color", "#71D697");
+				} else{
+					$("input").css("background-color", "white");
+				}
+				
+			});
 		});
 
 </script>
