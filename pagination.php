@@ -18,7 +18,7 @@ include_once 'header.php';
 </div>
 
 <div class="row my-table">
- <div class=" table-responsive1">
+ <div class="table-responsive1">
   <table class="table table-bordered" id="table">
     <thead>
       <tr>

@@ -2,6 +2,9 @@
 		function goback(){
 			window.location.href="index.php?page_no=<?=$_GET['page_no']?>&query=<?php echo $_GET['query'] ?>";
 			alert(console.log($_GET['page_no']));
+			// ------------back button functions------------
+			// javascript:history.go(-1);
+			// window.history.back();
 		}
 
 		function newRecord(){

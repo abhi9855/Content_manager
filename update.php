@@ -14,8 +14,16 @@
 </head>
 <body class="body">
 <div class="signup-form">
-	<form method = "GET" autocomplete="off" >
+	<?php
+			if($fetch['highlight']){
+		        $class='highlight';
+		      }else{
+		        $class='';
+		      }
+		?>
+	<form method = "GET" autocomplete="off" class='<?php echo $class; ?>'>
 		<h2>Edit Record</h2>
+
 			<div class="form-group">
 				<input type  =  "hidden" class="form-control" name  =  "page_no" placeholder = "Liqroo_ID" value="<?=$page_ID?>" readonly>
 				<input type  =  "hidden" class="form-control" name  =  "query" placeholder = "Liqroo_ID" value="<?=$search?>" readonly>
@@ -75,7 +83,7 @@
 
 			<div class="form-group">
 				<label>Highlight  : </label>
-				<input type="checkbox" id="myCheck" name="myCheck" value="1" onclick="myFunction();" <?php if($fetch_highlight == 1) {echo "checked";}?> >
+				<input type="checkbox" id="myCheck" name="myCheck" value="1" <?php if($fetch_highlight == 1) {echo "checked";}?> >
 			</div>
 
 			<div class="form-group">
