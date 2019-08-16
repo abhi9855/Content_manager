@@ -12,6 +12,8 @@ if (isset($_SESSION['userid'])) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <body class="body">
 <div class="signup-form">
@@ -71,8 +73,9 @@ if (isset($_SESSION['userid'])) {
 		</div>
 
 		<div class="form-group">
-				Highlight: <input type="checkbox" id="myCheck" name="myCheck" value="1"  >
-		</div>
+				<label>Highlight  : </label>
+				<input type="checkbox" id="myCheck" name="myCheck" value="1" <?php if($fetch_highlight == 1) {echo "checked";}?> >
+			</div>
 
 		<div class="form-group">
 			<button type = "submit" class="btn btn-success btn-lg btn-block" id="submit" name = "add" value = "Insert" onclick="return confirm('Are you sure?')">Save</button>
