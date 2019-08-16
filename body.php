@@ -21,7 +21,7 @@ if (isset($_SESSION['userid'])) {
 		<h2>New Record</h2>
 		<div class="form-group">
 			<input type  =  "hidden" class="form-control" name  =  "page_no" placeholder = "Liqroo_ID" value="<?=$page_ID?>" readonly>
-			<input type = "text" class="form-control" name = "id"  placeholder="Liqroo_ID" required="" autocomplete="off" >
+			<input type = "text" id="id" class="form-control"  name = "id"  placeholder="Liqroo_ID" required="" autocomplete="off" >
 		</div>
 
 		<div class="form-group">

@@ -29,13 +29,18 @@
 		$(document).ready(function(){
 			$("#myCheck").click(function(){
 				if($(this).prop("checked") == true){
-					$("input").css("background-color", "#71D697");
+					$("input").css("background-color", "#b3ffd9");
+					$("#id").css("background-color", "#ffb3b3");
+					$("#text1").css("background-color", "yellow");
+					$("#text2").css("background-color", "yellow");
+
 				} else{
 					$("input").css("background-color", "white");
 				}
-				
 			});
 		});
+
+		
 
 </script>
 </body>

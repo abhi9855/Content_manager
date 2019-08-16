@@ -14,21 +14,15 @@
 </head>
 <body class="body">
 <div class="signup-form">
-	<?php
-			if($fetch['highlight']){
-		        $class='highlight';
-		      }else{
-		        $class='';
-		      }
-		?>
-	<form method = "GET" autocomplete="off" class='<?php echo $class; ?>'>
+	
+	<form method = "GET" autocomplete="off">
 		<h2>Edit Record</h2>
-
+			
 			<div class="form-group">
 				<input type  =  "hidden" class="form-control" name  =  "page_no" placeholder = "Liqroo_ID" value="<?=$page_ID?>" readonly>
 				<input type  =  "hidden" class="form-control" name  =  "query" placeholder = "Liqroo_ID" value="<?=$search?>" readonly>
 				
-				<input type  =  "text" class="form-control" name  =  "id" placeholder = "Liqroo_ID" value="<?=$fetchid?>" readonly>
+				<input type  =  "text" id="id" class="form-control" name  =  "id" placeholder = "Liqroo_ID" value="<?=$fetchid?>" readonly>
 			</div>
 
 			<div class="form-group">
@@ -83,7 +77,7 @@
 
 			<div class="form-group">
 				<label>Highlight  : </label>
-				<input type="checkbox" id="myCheck" name="myCheck" value="1" <?php if($fetch_highlight == 1) {echo "checked";}?> >
+				<input type="checkbox" id="myCheck" name="myCheck" data-highlight=<?php echo $fetch_highlight;  ?> value="1" <?php if($fetch_highlight == 1) {echo "checked";}?> >
 			</div>
 
 			<div class="form-group">
@@ -101,4 +95,19 @@
 <!-- if condition ending for session checking-->
 <?php
 include_once 'footer.php';
+// echo 'welcome'. $fetch_highlight; 
 ?>
+
+<script>
+	$(document).ready(function(){
+		var custid = $('#myCheck').attr('data-highlight') 
+		if(custid!=0){
+			$("input").css("background-color", "#b3ffd9");
+			$("#id").css("background-color", "#ffb3b3");
+			$("#text1").css("background-color", "yellow");
+			$("#text2").css("background-color", "yellow");
+		// console.log(custid); 
+		}
+	});
+</script>
+
